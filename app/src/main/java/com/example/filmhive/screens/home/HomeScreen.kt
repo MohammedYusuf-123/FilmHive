@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -25,10 +26,12 @@ fun HomeScreen(navController: NavController) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
-            TopAppBar(
-                title = { Text(text = "Movies") },
-                colors = TopAppBarDefaults.topAppBarColors(Color.LightGray)
-            )
+            Surface(shadowElevation = 4.dp) {
+                TopAppBar(
+                    title = { Text(text = "Movies") },
+                    colors = TopAppBarDefaults.topAppBarColors(Color.LightGray)
+                )
+            }
         }
     ) { innerPadding ->
         MainContent(Modifier.padding(innerPadding), navController)
@@ -54,7 +57,7 @@ fun MainContent(
             items(items = movieList) {
                 MovieRow(movie = it) { movie ->
                     Log.d("TAG", "MainContent: $movie")
-                    navController.navigate(route = MovieScreens.DetailsScreen.name)
+                    navController.navigate(route = MovieScreens.DetailsScreen.name + "/$movie")
                 }
             }
         }
