@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 fun DetailsScreen(navController: NavController, movieData: String?) {
     Scaffold(
         topBar = {
-            Surface(shadowElevation = 4.dp) {
+            Surface/*(shadowElevation = 4.dp)*/ {
                 TopAppBar(
                     title = {
                         Row(horizontalArrangement = Arrangement.Start) {
@@ -48,7 +48,7 @@ fun DetailsScreen(navController: NavController, movieData: String?) {
                     },
                     //This is another way to elevate the TopAppBar
                     /*, modifier = Modifier.shadow(4.dp)*/
-                    colors = TopAppBarDefaults.topAppBarColors(Color.LightGray)
+                    colors = TopAppBarDefaults.topAppBarColors(Color.Transparent)
                 )
             }
         }

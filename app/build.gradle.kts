@@ -59,4 +59,11 @@ dependencies {
 
     //Navigation Component in Compose Library
     implementation(libs.androidx.navigation.compose)
+
+    //Coil library to add images in app using URLs implementation(libs())
+    implementation(libs.coil.compose)
+    //this is needed so that coil can fetch the images from the network - so
+    //i am using the ktor version to fetch the images
+    //implementation(libs.coil.network.okhttp)
+    implementation(libs.coil.network.ktor3)
 }

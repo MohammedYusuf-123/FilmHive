@@ -17,8 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.filmhive.MovieRow
+import com.example.filmhive.model.Movie
+import com.example.filmhive.model.getMovie
 import com.example.filmhive.navigation.MovieScreens
+import com.example.filmhive.widgets.MovieRow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -26,10 +28,10 @@ fun HomeScreen(navController: NavController) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
-            Surface(shadowElevation = 4.dp) {
+            Surface(/*shadowElevation = 4.dp*/) {
                 TopAppBar(
                     title = { Text(text = "Movies") },
-                    colors = TopAppBarDefaults.topAppBarColors(Color.LightGray)
+                    colors = TopAppBarDefaults.topAppBarColors(Color.Transparent)
                 )
             }
         }
@@ -42,15 +44,7 @@ fun HomeScreen(navController: NavController) {
 fun MainContent(
     modifier: Modifier,
     navController: NavController,
-    movieList: List<String> = listOf(
-        "Avatar",
-        "300",
-        "Harry Potter",
-        "Troy",
-        "The Message",
-        "Schindler's List",
-        "Terminator"
-    )
+    movieList: List<Movie> = getMovie()
 ) {
     Column(modifier = modifier.padding(12.dp)) {
         LazyColumn {
