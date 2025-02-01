@@ -16,7 +16,7 @@ FilmHive is a beautifully designed Android app built using Kotlin and Jetpack Co
 ## 📸 Screenshots
 
 ### Home Screen
-![Home Screen](./screenshots/HomeScreen.jpeg)
+<img src="screenshots/HomeScreen.png" alt="Home Screen" width="300"/>
 
 ### Movie Details Expanded
 ![Movie Details](./screenshots/MovieDetailsButton.jpeg)
